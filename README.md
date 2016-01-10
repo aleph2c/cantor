@@ -1,4 +1,4 @@
-# cantor function written using nyaplot
+# The Cantor function graphed using nyaplot
 
 To get this working:
 
@@ -14,3 +14,4 @@ To use the Cantor class consider the following example:
 # Notes
 Ruby does not have good baked-in support for changing the bases of decimal
 numbers.  To do this I used the flt library.
+

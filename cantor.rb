@@ -1,12 +1,8 @@
 require 'flt'
 require 'nyaplot'
-
-#plot = Nyaplot::Plot.new
-#sc = plot.add(:scatter, [0,1,2,3,4], [-1,2,-3,4,-5])
-#color = Nyaplot::Colors.qual
-#sc.color(color)
-#plot.export_html 
-
+# To use this Class consider the following example:
+# c = Cantor.new(100) # plot 101 locations in the cantor function
+# c.plot              # create a graph called cantor_plot_101.html
 class Cantor
   attr_accessor :domain
   attr_reader   :range
@@ -42,11 +38,6 @@ class Cantor
     sc.color(color)
     sc.shape(["circle"])
     plot.export_html("cantor_plot_%s.html" % @domain.size )
-  end
-
-  def to_range!
-    @domain.each do |d|
-    end
   end
 
   def to_b_3(n)
@@ -94,7 +85,7 @@ class Cantor
     end
     o
   end
-
+  # Takes a value between 0 and 1 and converts it to the cantor number
   def to_cantor(n)
     o = to_b_3(n)
     o = replace_all_digits_after_first_1_with_zero(o)

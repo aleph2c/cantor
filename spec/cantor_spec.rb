@@ -1,5 +1,5 @@
 $dir = File.expand_path File.dirname(__FILE__)
-require "#{$dir}/../base.rb"
+require "#{$dir}/../cantor.rb"
 require "byebug"
 
 describe Cantor do
@@ -68,12 +68,11 @@ describe Cantor do
     c = Cantor.new(100)
     expect(c.domain.size).to be == 101
     expect(c.range.size).to be  == 101
-    puts c.range.last
-    puts c.domain[1]
-    puts c.range[1]
   end
+
   it "should produces the cantor function" do
     c = Cantor.new(100)
     c.plot
   end
+
 end

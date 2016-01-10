@@ -1,22 +1,24 @@
 require 'flt'
 require 'nyaplot'
 # To use this Class consider the following example:
-# c = Cantor.new(100) # plot 101 locations in the cantor function
+# c = Cantor.new(100) # plot 100 locations in the cantor function
 # c.plot              # create a graph called cantor_plot_101.html
 class Cantor
   attr_accessor :domain
   attr_reader   :range
   attr_accessor :w
   Precision     = 10
-  def initialize(items_in_domain_minus_one)
+  def initialize(items)
     @domain = []
     @range  = []
-    (0..items_in_domain_minus_one).to_a.each do |x|
-      @domain.push x/items_in_domain_minus_one.to_f
+    items_in_domain = items - 1
+    (0..items_in_domain).to_a.each do |x|
+      @domain.push x/items_in_domain.to_f
     end
 
     # make it an empty array if there is nothing to work with
-    @domain = [] if @domain.first.nan?
+    @domain = [] if @domain.nil?
+    @domain = [] if !@domain.empty? && @domain.first.nan?
     if @domain.empty? == false
       @domain.each do |x|
         y = to_cantor(x)

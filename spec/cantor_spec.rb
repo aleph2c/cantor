@@ -10,17 +10,17 @@ describe Cantor do
 
   it "should have 0 and 1 if given a 1" do
     c = Cantor.new(1)
-    expect(c.domain).to eq [0.0, 1.0]
+    expect(c.domain).to eq []
   end
 
   it "should have 0, 0.5 and a 1 if given a 2" do
     c = Cantor.new(2)
-    expect(c.domain).to eq [0.0, 0.5, 1.0]
+    expect(c.domain).to eq [0.0, 1.0]
   end
 
-  it "should have a 101 items for a constructor given 100" do
+  it "should have a 100 items for a constructor given 100" do
     c = Cantor.new(100)
-    expect(c.domain.size).to eq 101
+    expect(c.domain.size).to eq 100
     expect(c.domain.first).to eq 0
     expect(c.domain.last).to eq 1
   end
@@ -66,8 +66,8 @@ describe Cantor do
 
   it "should produces n+1 cantor numbers" do
     c = Cantor.new(100)
-    expect(c.domain.size).to be == 101
-    expect(c.range.size).to be  == 101
+    expect(c.domain.size).to be == 100
+    expect(c.range.size).to be  == 100
   end
 
   it "should produces the cantor function" do

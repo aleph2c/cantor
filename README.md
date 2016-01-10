@@ -1,2 +1,4 @@
 # cantor
-playing around with the cantor function
+To get this working:
+    > bundle install
+    > guard
